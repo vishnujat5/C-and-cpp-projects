@@ -21,23 +21,23 @@ string to_string(int num) {
     }
     return result;
 }
-	int to_int(string str){
-		int num = 0,startIndex=0;
-		bool isNegative = false;
-		if(str[0]=='-'){
-			isNegative = true;
-			startIndex = 1;
+int to_int(string str){
+	int num = 0,startIndex=0;
+	bool isNegative = false;
+	if(str[0]=='-'){
+		isNegative = true;
+		startIndex = 1;
+	}
+	for(int i=startIndex;i<str.length();i++){
+		if(str[i]>='0' && str[i]<='9'){
+			num = num*10 + (str[i] - '0');
+		}else{
+			cout<<"Invalid input: non-numeric character found."<<endl;
 		}
-		for(int i=startIndex;i<str.length();i++){
-			if(str[i]>='0' && str[i]<='9'){
-				num = num*10 + (str[i] - '0');
-			}else{
-				cout<<"Invalid input: non-numeric character found."<<endl;
-			}
-		}
-		if(isNegative)
-			num = -num;
-		return num;
+	}
+	if(isNegative)
+		num = -num;
+	return num;
 	}
 class addEmployee{
 	public:
@@ -114,7 +114,6 @@ int append(string updated_records){
     cout<< updated_records;
    	file << updated_records << endl;
     file.close();
-    cout << "Data appended to the file successfully!" << endl;
 }
 //void searchAndPrintLine(const string& fileName, const string& searchText) {
 //    ifstream file(fileName); // Open the file for reading
@@ -147,9 +146,9 @@ int main() {
     int a = 10;
     addEmployee obj;
 	obj.getRecord();
+	cout<<"\nTotal records found: \n"<<endl;
 	obj.printData();
-	cout<<"\nafter adding 10: \n"<<endl;
+	cout<<"\nafter adding 10 records: \n"<<endl;
 	append(obj.updateRecordsCount(obj.total_record_count,a));
-	//obj.getRecord();
     return 0;
 }
