@@ -114,7 +114,6 @@ int append(string updated_records){
     cout<< updated_records;
    	file << updated_records << endl;
     file.close();
-    cout << "Data appended to the file successfully!" << endl;
 }
 //void searchAndPrintLine(const string& fileName, const string& searchText) {
 //    ifstream file(fileName); // Open the file for reading
@@ -147,6 +146,7 @@ int main() {
     int a = 10;
     addEmployee obj;
 	obj.getRecord();
+	cout<<"\ntotal records found: \n"<<endl;
 	obj.printData();
 	cout<<"\nafter adding 10: \n"<<endl;
 	append(obj.updateRecordsCount(obj.total_record_count,a));
